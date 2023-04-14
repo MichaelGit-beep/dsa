@@ -1,22 +1,11 @@
 package main
 
-import (
-	"fmt"
-	"reflect"
-)
-
-type One struct {
-	Val string
-}
-
-func (o One) get() {
-	fmt.Println(reflect.TypeOf(o))
-	o.Val = "empty"
-}
+import "fmt"
 
 func main() {
-	p := One{"H"}
-	fmt.Println(reflect.TypeOf(p))
-	(&p).get()
-	fmt.Println(p)
+	a := 1
+	if 10 > 2 {
+		a += 2
+	}
+	fmt.Print(a)
 }
