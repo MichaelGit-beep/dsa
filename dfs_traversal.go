@@ -167,12 +167,15 @@ func maxRootToLeafSum(root *Node) int {
 		return max
 	}
 	max = root.Val.(int)
+	if root.Left == nil && root.Right == nil {
+		return max
+	}
 	lmax := maxRootToLeafSum(root.Left)
 	rmax := maxRootToLeafSum(root.Right)
 	if lmax > rmax {
 		max += lmax
 	}
-	if rmax > lmax {
+	if rmax >= lmax {
 		max += rmax
 	}
 	return max
